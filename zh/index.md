@@ -14,7 +14,7 @@ hero:
       text: 安装使用
       link: /zh/guide/getting-started
   image:
-    src: https://cdn.jsdelivr.net/npm/fire-cat/logo-new.png
+    src: /images/logo-new.png
     alt: FireCat
 
 features:
