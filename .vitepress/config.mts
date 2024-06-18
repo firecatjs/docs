@@ -65,7 +65,7 @@ export default defineConfig({
             items: [
               { text: 'FireCat是什么', link: '/zh/guide/introduction' },
               { text: '开始', link: '/zh/guide/getting-started' },
-              { text: '目录结构', link: '/zh/guide/getting-started' },
+              { text: '目录结构', link: '/zh/guide/getting-started23' },
             ]
           },
           {
@@ -73,9 +73,9 @@ export default defineConfig({
             items: [
               { text: '控制器', link: '/zh/guide/introduction1' },
               { text: '装饰器', link: '/zh/guide/getting-started2' },
-              { text: '拦截器', link: '/zh/guide/getting-started2' },
-              { text: '路由', link: '/zh/guide/getting-started2' },
-              { text: '验证', link: '/zh/guide/getting-started2' },
+              { text: '拦截器', link: '/zh/guide/getting-started3' },
+              { text: '路由', link: '/zh/guide/getting-started4' },
+              { text: '验证', link: '/zh/guide/getting-started5' },
             ]
           },
           {
@@ -83,7 +83,7 @@ export default defineConfig({
             items: [
               { text: '自定义装饰器', link: '/zh/guide/introduction1' },
               { text: '文档服务', link: '/zh/guide/introduction1' },
-              { text: '最佳实践', link: '/zh/guide/getting-started2' },
+              { text: '最佳实践', link: '/zh/guide/getting-started6' },
             ]
           },
           {
