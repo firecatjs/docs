@@ -73,6 +73,7 @@ export default defineConfig({
             items: [
               { text: '控制器', link: '/zh/guide/introduction1' },
               { text: '装饰器', link: '/zh/guide/getting-started2' },
+              { text: '拦截器', link: '/zh/guide/getting-started2' },
               { text: '路由', link: '/zh/guide/getting-started2' },
               { text: '验证', link: '/zh/guide/getting-started2' },
             ]
