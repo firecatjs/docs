@@ -20,6 +20,7 @@ FireCat 使用 Typescript作为主要开发语言，FireCat 内置了服务端�
 * Webpack 打包
 * 自定义拦截器
 * 分组路由
+* 支持各种环境的配置文件
 
 ## 基础示例
 

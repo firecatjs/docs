@@ -540,12 +540,12 @@ var __copyProps2 = (to, from, except, desc) => {
   }
   return to;
 };
-var __toESM2 = (mod, isNodeMode, target21) => (target21 = mod != null ? __create2(__getProtoOf2(mod)) : {}, __copyProps2(
+var __toESM2 = (mod, isNodeMode, target20) => (target20 = mod != null ? __create2(__getProtoOf2(mod)) : {}, __copyProps2(
   // If the importer is in node compatibility mode or this is not an ESM
   // file that has been converted to a CommonJS file using a Babel-
   // compatible transform (i.e. "__esModule" has not been set), then set
   // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp2(target21, "default", { value: mod, enumerable: true }) : target21,
+  isNodeMode || !mod || !mod.__esModule ? __defProp2(target20, "default", { value: mod, enumerable: true }) : target20,
   mod
 ));
 var init_esm_shims2 = __esm2({
@@ -2168,18 +2168,18 @@ async function getComponentId(options) {
   }
 }
 function isFragment(instance) {
-  var _a24;
-  const subTreeType = (_a24 = instance.subTree) == null ? void 0 : _a24.type;
+  var _a23;
+  const subTreeType = (_a23 = instance.subTree) == null ? void 0 : _a23.type;
   return subTreeType === Fragment;
 }
 function getInstanceName(instance) {
-  var _a24, _b24, _c;
+  var _a23, _b23, _c;
   const name = getComponentTypeName((instance == null ? void 0 : instance.type) || {});
   if (name)
     return name;
   if ((instance == null ? void 0 : instance.root) === instance)
     return "Root";
-  for (const key in (_b24 = (_a24 = instance.parent) == null ? void 0 : _a24.type) == null ? void 0 : _b24.components) {
+  for (const key in (_b23 = (_a23 = instance.parent) == null ? void 0 : _a23.type) == null ? void 0 : _b23.components) {
     if (instance.parent.type.components[key] === (instance == null ? void 0 : instance.type))
       return saveComponentGussedName(instance, key);
   }
@@ -2350,9 +2350,9 @@ function getStyles(bounds) {
   };
 }
 function create(options) {
-  var _a24;
+  var _a23;
   const containerEl = document.createElement("div");
-  containerEl.id = (_a24 = options.elementId) != null ? _a24 : CONTAINER_ELEMENT_ID;
+  containerEl.id = (_a23 = options.elementId) != null ? _a23 : CONTAINER_ELEMENT_ID;
   Object.assign(containerEl.style, {
     ...containerStyles,
     ...getStyles(options.bounds),
@@ -2407,9 +2407,9 @@ function unhighlight() {
 }
 var inspectInstance = null;
 function inspectFn(e) {
-  const target21 = e.target;
-  if (target21) {
-    const instance = target21.__vueParentComponent;
+  const target20 = e.target;
+  if (target20) {
+    const instance = target20.__vueParentComponent;
     if (instance) {
       inspectInstance = instance;
       const el = instance.vnode.el;
@@ -2423,11 +2423,11 @@ function inspectFn(e) {
   }
 }
 function selectComponentFn(e, cb) {
-  var _a24;
+  var _a23;
   e.preventDefault();
   e.stopPropagation();
   if (inspectInstance) {
-    const app = (_a24 = activeAppRecord.value) == null ? void 0 : _a24.app;
+    const app = (_a23 = activeAppRecord.value) == null ? void 0 : _a23.app;
     getComponentId({
       app,
       uid: app.uid,
@@ -2574,7 +2574,7 @@ function setActiveAppRecordId(id) {
   updateAllStates();
 }
 var devtoolsState = new Proxy(target[STATE_KEY], {
-  get(target21, property) {
+  get(target20, property) {
     if (property === "appRecords") {
       return devtoolsAppRecords;
     } else if (property === "activeAppRecordId") {
@@ -2586,13 +2586,13 @@ var devtoolsState = new Proxy(target[STATE_KEY], {
     }
     return target[STATE_KEY][property];
   },
-  deleteProperty(target21, property) {
-    delete target21[property];
+  deleteProperty(target20, property) {
+    delete target20[property];
     return true;
   },
-  set(target21, property, value) {
+  set(target20, property, value) {
     const oldState = { ...target[STATE_KEY] };
-    target21[property] = value;
+    target20[property] = value;
     target[STATE_KEY][property] = value;
     return true;
   }
@@ -2638,8 +2638,8 @@ var _a8;
 var _b8;
 (_b8 = (_a8 = target).__VUE_DEVTOOLS_KIT_TIMELINE_LAYERS) != null ? _b8 : _a8.__VUE_DEVTOOLS_KIT_TIMELINE_LAYERS = [];
 var devtoolsTimelineLayers = new Proxy(target.__VUE_DEVTOOLS_KIT_TIMELINE_LAYERS, {
-  get(target21, prop, receiver) {
-    return Reflect.get(target21, prop, receiver);
+  get(target20, prop, receiver) {
+    return Reflect.get(target20, prop, receiver);
   }
 });
 function addTimelineLayer(options, descriptor) {
@@ -2653,8 +2653,8 @@ var _a9;
 var _b9;
 (_b9 = (_a9 = target).__VUE_DEVTOOLS_KIT_INSPECTOR__) != null ? _b9 : _a9.__VUE_DEVTOOLS_KIT_INSPECTOR__ = [];
 var devtoolsInspector = new Proxy(target.__VUE_DEVTOOLS_KIT_INSPECTOR__, {
-  get(target21, prop, receiver) {
-    return Reflect.get(target21, prop, receiver);
+  get(target20, prop, receiver) {
+    return Reflect.get(target20, prop, receiver);
   }
 });
 var callInspectorUpdatedHook = debounce(() => {
@@ -2672,14 +2672,14 @@ function addInspector(inspector, descriptor) {
 }
 function getActiveInspectors() {
   return devtoolsInspector.filter((inspector) => inspector.descriptor.app === activeAppRecord.value.app).filter((inspector) => inspector.descriptor.id !== "components").map((inspector) => {
-    var _a24;
+    var _a23;
     const descriptor = inspector.descriptor;
     const options = inspector.options;
     return {
       id: options.id,
       label: options.label,
       logo: descriptor.logo,
-      icon: `i-ic-baseline-${(_a24 = options == null ? void 0 : options.icon) == null ? void 0 : _a24.replace(/_/g, "-")}`,
+      icon: `i-ic-baseline-${(_a23 = options == null ? void 0 : options.icon) == null ? void 0 : _a23.replace(/_/g, "-")}`,
       packageName: descriptor.packageName,
       homepage: descriptor.homepage
     };
@@ -2731,8 +2731,8 @@ function createDevToolsCtxHooks() {
     addInspector(inspector, plugin.descriptor);
   });
   hooks2.hook("sendInspectorTree", async ({ inspectorId, plugin }) => {
-    var _a24;
-    if (!inspectorId || !((_a24 = plugin == null ? void 0 : plugin.descriptor) == null ? void 0 : _a24.app))
+    var _a23;
+    if (!inspectorId || !((_a23 = plugin == null ? void 0 : plugin.descriptor) == null ? void 0 : _a23.app))
       return;
     const inspector = getInspector(inspectorId, plugin.descriptor.app);
     const _payload = {
@@ -2763,8 +2763,8 @@ function createDevToolsCtxHooks() {
     );
   });
   hooks2.hook("sendInspectorState", async ({ inspectorId, plugin }) => {
-    var _a24;
-    if (!inspectorId || !((_a24 = plugin == null ? void 0 : plugin.descriptor) == null ? void 0 : _a24.app))
+    var _a23;
+    if (!inspectorId || !((_a23 = plugin == null ? void 0 : plugin.descriptor) == null ? void 0 : _a23.app))
       return;
     const inspector = getInspector(inspectorId, plugin.descriptor.app);
     const _payload = {
@@ -2916,9 +2916,9 @@ var StateEditor = class {
         else Reflect.deleteProperty(object, field);
       }
       if (!state.remove) {
-        const target21 = object[state.newKey || field];
-        if (this.refEditor.isRef(target21))
-          this.refEditor.set(target21, value);
+        const target20 = object[state.newKey || field];
+        if (this.refEditor.isRef(target20))
+          this.refEditor.set(target20, value);
         else if (toRaw(object) instanceof Map)
           object.set(state.newKey || field, value);
         else if (toRaw(object) instanceof Set)
@@ -2967,11 +2967,11 @@ var RefStateEditor = class {
 var stateEditor = new StateEditor();
 init_esm_shims2();
 function openInEditor(options = {}) {
-  var _a24;
+  var _a23;
   const { file, baseUrl = window.location.origin, line = 0, column = 0 } = options;
   if (file) {
     if (devtoolsState.vitePluginDetected) {
-      const _baseUrl = (_a24 = target.__VUE_DEVTOOLS_OPEN_IN_EDITOR_BASE_URL__) != null ? _a24 : baseUrl;
+      const _baseUrl = (_a23 = target.__VUE_DEVTOOLS_OPEN_IN_EDITOR_BASE_URL__) != null ? _a23 : baseUrl;
       target.__VUE_INSPECTOR__.openInEditor(_baseUrl, file, line, column);
     } else {
     }
@@ -2991,12 +2991,12 @@ var _a11;
 var _b11;
 (_b11 = (_a11 = target)[ROUTER_KEY]) != null ? _b11 : _a11[ROUTER_KEY] = {};
 var devtoolsRouterInfo = new Proxy(target[ROUTER_INFO_KEY], {
-  get(target21, property) {
+  get(target20, property) {
     return target[ROUTER_INFO_KEY][property];
   }
 });
 var devtoolsRouter = new Proxy(target[ROUTER_KEY], {
-  get(target21, property) {
+  get(target20, property) {
     if (property === "value") {
       return target[ROUTER_KEY];
     }
@@ -3036,8 +3036,8 @@ function filterCurrentRoute(route) {
 }
 function normalizeRouterInfo(appRecord, activeAppRecord2) {
   function init() {
-    var _a24;
-    const router = (_a24 = appRecord.app) == null ? void 0 : _a24.config.globalProperties.$router;
+    var _a23;
+    const router = (_a23 = appRecord.app) == null ? void 0 : _a23.config.globalProperties.$router;
     const currentRoute = filterCurrentRoute(router == null ? void 0 : router.currentRoute.value);
     const routes = filterRoutes(getRoutes(router));
     const c = console.warn;
@@ -3052,8 +3052,8 @@ function normalizeRouterInfo(appRecord, activeAppRecord2) {
   }
   init();
   hook.on.componentUpdated(debounce(() => {
-    var _a24;
-    if (((_a24 = activeAppRecord2.value) == null ? void 0 : _a24.app) !== appRecord.app)
+    var _a23;
+    if (((_a23 = activeAppRecord2.value) == null ? void 0 : _a23.app) !== appRecord.app)
       return;
     init();
     devtoolsContext.hooks.callHook("routerInfoUpdated", { state: target[ROUTER_INFO_KEY] });
@@ -3097,197 +3097,6 @@ function getComponentInspector() {
     } else {
       setup();
     }
-  });
-}
-init_esm_shims2();
-init_esm_shims2();
-init_esm_shims2();
-init_esm_shims2();
-var _a13;
-var _b13;
-(_b13 = (_a13 = target).__VUE_DEVTOOLS_KIT_PLUGIN_BUFFER__) != null ? _b13 : _a13.__VUE_DEVTOOLS_KIT_PLUGIN_BUFFER__ = [];
-var devtoolsPluginBuffer = new Proxy(target.__VUE_DEVTOOLS_KIT_PLUGIN_BUFFER__, {
-  get(target21, prop, receiver) {
-    return Reflect.get(target21, prop, receiver);
-  }
-});
-var DevToolsV6PluginAPI = class {
-  constructor({ plugin, ctx }) {
-    this.hooks = ctx.hooks;
-    this.plugin = plugin;
-  }
-  get on() {
-    return {
-      // component inspector
-      visitComponentTree: (handler) => {
-        this.hooks.hook("visitComponentTree", handler);
-      },
-      inspectComponent: (handler) => {
-        this.hooks.hook("inspectComponent", handler);
-      },
-      editComponentState: (handler) => {
-        this.hooks.hook("editComponentState", handler);
-      },
-      // custom inspector
-      getInspectorTree: (handler) => {
-        this.hooks.hook("getInspectorTree", handler);
-      },
-      getInspectorState: (handler) => {
-        this.hooks.hook("getInspectorState", handler);
-      },
-      editInspectorState: (handler) => {
-        this.hooks.hook("editInspectorState", handler);
-      },
-      // timeline
-      inspectTimelineEvent: (handler) => {
-        this.hooks.hook("inspectTimelineEvent", handler);
-      },
-      timelineCleared: (handler) => {
-        this.hooks.hook("timelineCleared", handler);
-      },
-      // settings
-      setPluginSettings: (handler) => {
-        this.hooks.hook("setPluginSettings", handler);
-      }
-    };
-  }
-  // component inspector
-  notifyComponentUpdate(instance) {
-    var _a24;
-    const inspector = getActiveInspectors().find((i) => i.packageName === this.plugin.descriptor.packageName);
-    if (inspector == null ? void 0 : inspector.id) {
-      if (instance) {
-        const args = [
-          instance.appContext.app,
-          instance.uid,
-          (_a24 = instance.parent) == null ? void 0 : _a24.uid,
-          instance
-        ];
-        devtoolsHooks.callHook("component:updated", ...args);
-      } else {
-        devtoolsHooks.callHook(
-          "component:updated"
-          /* COMPONENT_UPDATED */
-        );
-      }
-      this.hooks.callHook("sendInspectorState", { inspectorId: inspector.id, plugin: this.plugin });
-    }
-  }
-  // custom inspector
-  addInspector(options) {
-    this.hooks.callHook("addInspector", { inspector: options, plugin: this.plugin });
-  }
-  sendInspectorTree(inspectorId) {
-    this.hooks.callHook("sendInspectorTree", { inspectorId, plugin: this.plugin });
-  }
-  sendInspectorState(inspectorId) {
-    this.hooks.callHook("sendInspectorState", { inspectorId, plugin: this.plugin });
-  }
-  selectInspectorNode(inspectorId, nodeId) {
-    this.hooks.callHook("customInspectorSelectNode", { inspectorId, nodeId, plugin: this.plugin });
-  }
-  // timeline
-  now() {
-    return Date.now();
-  }
-  addTimelineLayer(options) {
-    this.hooks.callHook("timelineLayerAdded", { options, plugin: this.plugin });
-  }
-  addTimelineEvent(options) {
-    this.hooks.callHook("timelineEventAdded", { options, plugin: this.plugin });
-  }
-  // settings
-  getSettings(pluginId) {
-    var _a24, _b24, _c;
-    function _getSettings(settings) {
-      const _settings = {};
-      Object.keys(settings).forEach((key) => {
-        _settings[key] = settings[key].defaultValue;
-      });
-      return _settings;
-    }
-    if (pluginId) {
-      const item = (_b24 = (_a24 = devtoolsPluginBuffer.find((item2) => item2[0].id === pluginId)) == null ? void 0 : _a24[0]) != null ? _b24 : null;
-      return (_c = _getSettings(item == null ? void 0 : item.settings)) != null ? _c : _getSettings(this.plugin.descriptor.settings);
-    } else {
-      return _getSettings(this.plugin.descriptor.settings);
-    }
-  }
-  // utilities
-  getComponentInstances(app) {
-    return this.hooks.callHook("getComponentInstances", { app });
-  }
-  getComponentBounds(instance) {
-    return this.hooks.callHook("getComponentBounds", { instance });
-  }
-  getComponentName(instance) {
-    return this.hooks.callHook("getComponentName", { instance });
-  }
-  highlightElement(instance) {
-    const uid = instance.__VUE_DEVTOOLS_NEXT_UID__;
-    return this.hooks.callHook("componentHighlight", { uid });
-  }
-  unhighlightElement() {
-    return this.hooks.callHook(
-      "componentUnhighlight"
-      /* COMPONENT_UNHIGHLIGHT */
-    );
-  }
-};
-var DevToolsPluginAPI = DevToolsV6PluginAPI;
-init_esm_shims2();
-init_esm_shims2();
-init_esm_shims2();
-init_esm_shims2();
-init_esm_shims2();
-init_esm_shims2();
-var UNDEFINED = "__vue_devtool_undefined__";
-var INFINITY = "__vue_devtool_infinity__";
-var NEGATIVE_INFINITY = "__vue_devtool_negative_infinity__";
-var NAN = "__vue_devtool_nan__";
-init_esm_shims2();
-init_esm_shims2();
-var tokenMap = {
-  [UNDEFINED]: "undefined",
-  [NAN]: "NaN",
-  [INFINITY]: "Infinity",
-  [NEGATIVE_INFINITY]: "-Infinity"
-};
-var reversedTokenMap = Object.entries(tokenMap).reduce((acc, [key, value]) => {
-  acc[value] = key;
-  return acc;
-}, {});
-init_esm_shims2();
-var _a14;
-var _b14;
-(_b14 = (_a14 = target).__VUE_DEVTOOLS_KIT__REGISTERED_PLUGIN_APPS__) != null ? _b14 : _a14.__VUE_DEVTOOLS_KIT__REGISTERED_PLUGIN_APPS__ = /* @__PURE__ */ new Set();
-function setupDevToolsPlugin(pluginDescriptor, setupFn) {
-  return hook.setupDevToolsPlugin(pluginDescriptor, setupFn);
-}
-function callDevToolsPluginSetupFn(plugin, app) {
-  const [pluginDescriptor, setupFn] = plugin;
-  if (pluginDescriptor.app !== app)
-    return;
-  const api = new DevToolsPluginAPI({
-    plugin: {
-      setupFn,
-      descriptor: pluginDescriptor
-    },
-    ctx: devtoolsContext
-  });
-  if (pluginDescriptor.packageName === "vuex") {
-    api.on.editInspectorState((payload) => {
-      api.sendInspectorState(payload.inspectorId);
-    });
-  }
-  setupFn(api);
-}
-function registerDevToolsPlugin(app) {
-  if (target.__VUE_DEVTOOLS_KIT__REGISTERED_PLUGIN_APPS__.has(app))
-    return;
-  target.__VUE_DEVTOOLS_KIT__REGISTERED_PLUGIN_APPS__.add(app);
-  devtoolsPluginBuffer.forEach((plugin) => {
-    callDevToolsPluginSetupFn(plugin, app);
   });
 }
 function createDevToolsApi(hooks2) {
@@ -3389,7 +3198,6 @@ function createDevToolsApi(hooks2) {
         setActiveAppRecord(appRecord);
         normalizeRouterInfo(appRecord, activeAppRecord);
         callInspectorUpdatedHook();
-        registerDevToolsPlugin(appRecord.app);
       }
     },
     // inspect dom
@@ -3405,15 +3213,24 @@ function createDevToolsApi(hooks2) {
   };
 }
 init_esm_shims2();
-var _a15;
-var _b15;
-(_b15 = (_a15 = target).__VUE_DEVTOOLS_ENV__) != null ? _b15 : _a15.__VUE_DEVTOOLS_ENV__ = {
+var _a13;
+var _b13;
+(_b13 = (_a13 = target).__VUE_DEVTOOLS_KIT_PLUGIN_BUFFER__) != null ? _b13 : _a13.__VUE_DEVTOOLS_KIT_PLUGIN_BUFFER__ = [];
+var devtoolsPluginBuffer = new Proxy(target.__VUE_DEVTOOLS_KIT_PLUGIN_BUFFER__, {
+  get(target20, prop, receiver) {
+    return Reflect.get(target20, prop, receiver);
+  }
+});
+init_esm_shims2();
+var _a14;
+var _b14;
+(_b14 = (_a14 = target).__VUE_DEVTOOLS_ENV__) != null ? _b14 : _a14.__VUE_DEVTOOLS_ENV__ = {
   vitePluginDetected: false
 };
 var hooks = createDevToolsCtxHooks();
-var _a16;
-var _b16;
-(_b16 = (_a16 = target).__VUE_DEVTOOLS_KIT_CONTEXT__) != null ? _b16 : _a16.__VUE_DEVTOOLS_KIT_CONTEXT__ = {
+var _a15;
+var _b15;
+(_b15 = (_a15 = target).__VUE_DEVTOOLS_KIT_CONTEXT__) != null ? _b15 : _a15.__VUE_DEVTOOLS_KIT_CONTEXT__ = {
   hooks,
   get state() {
     return {
@@ -3429,12 +3246,41 @@ var devtoolsContext = target.__VUE_DEVTOOLS_KIT_CONTEXT__;
 init_esm_shims2();
 init_esm_shims2();
 var import_speakingurl = __toESM2(require_speakingurl2(), 1);
-var _a17;
-var _b17;
-var appRecordInfo = (_b17 = (_a17 = target).__VUE_DEVTOOLS_NEXT_APP_RECORD_INFO__) != null ? _b17 : _a17.__VUE_DEVTOOLS_NEXT_APP_RECORD_INFO__ = {
+var _a16;
+var _b16;
+var appRecordInfo = (_b16 = (_a16 = target).__VUE_DEVTOOLS_NEXT_APP_RECORD_INFO__) != null ? _b16 : _a16.__VUE_DEVTOOLS_NEXT_APP_RECORD_INFO__ = {
   id: 0,
   appIds: /* @__PURE__ */ new Set()
 };
+init_esm_shims2();
+init_esm_shims2();
+init_esm_shims2();
+init_esm_shims2();
+init_esm_shims2();
+init_esm_shims2();
+init_esm_shims2();
+init_esm_shims2();
+init_esm_shims2();
+var UNDEFINED = "__vue_devtool_undefined__";
+var INFINITY = "__vue_devtool_infinity__";
+var NEGATIVE_INFINITY = "__vue_devtool_negative_infinity__";
+var NAN = "__vue_devtool_nan__";
+init_esm_shims2();
+init_esm_shims2();
+var tokenMap = {
+  [UNDEFINED]: "undefined",
+  [NAN]: "NaN",
+  [INFINITY]: "Infinity",
+  [NEGATIVE_INFINITY]: "-Infinity"
+};
+var reversedTokenMap = Object.entries(tokenMap).reduce((acc, [key, value]) => {
+  acc[value] = key;
+  return acc;
+}, {});
+init_esm_shims2();
+function setupDevToolsPlugin(pluginDescriptor, setupFn) {
+  return hook.setupDevToolsPlugin(pluginDescriptor, setupFn);
+}
 function onDevToolsClientConnected(fn) {
   return new Promise((resolve) => {
     if (devtoolsState.connected && devtoolsState.clientConnected) {
@@ -4025,7 +3871,7 @@ function generateReferentialEqualityAnnotations(identitites, dedupe) {
   }
 }
 var walker = (object, identities, superJson, dedupe, path = [], objectsInThisPath = [], seenObjects = /* @__PURE__ */ new Map()) => {
-  var _a24;
+  var _a23;
   const primitive = isPrimitive2(object);
   if (!primitive) {
     addIdentity(object, path, identities);
@@ -4055,7 +3901,7 @@ var walker = (object, identities, superJson, dedupe, path = [], objectsInThisPat
     };
   }
   const transformationResult = transformValue(object, superJson);
-  const transformed = (_a24 = transformationResult == null ? void 0 : transformationResult.value) != null ? _a24 : object;
+  const transformed = (_a23 = transformationResult == null ? void 0 : transformationResult.value) != null ? _a23 : object;
   const transformedValue = isArray(transformed) ? [] : {};
   const innerAnnotations = {};
   forEach(transformed, (value, index) => {
@@ -4121,22 +3967,22 @@ function assignProp(carry, key, newVal, originalObject, includeNonenumerable) {
     });
   }
 }
-function copy(target21, options = {}) {
-  if (isArray2(target21)) {
-    return target21.map((item) => copy(item, options));
+function copy(target20, options = {}) {
+  if (isArray2(target20)) {
+    return target20.map((item) => copy(item, options));
   }
-  if (!isPlainObject3(target21)) {
-    return target21;
+  if (!isPlainObject3(target20)) {
+    return target20;
   }
-  const props = Object.getOwnPropertyNames(target21);
-  const symbols = Object.getOwnPropertySymbols(target21);
+  const props = Object.getOwnPropertyNames(target20);
+  const symbols = Object.getOwnPropertySymbols(target20);
   return [...props, ...symbols].reduce((carry, key) => {
     if (isArray2(options.props) && !options.props.includes(key)) {
       return carry;
     }
-    const val = target21[key];
+    const val = target20[key];
     const newVal = copy(val, options);
-    assignProp(carry, key, newVal, target21, options.nonenumerable);
+    assignProp(carry, key, newVal, target20, options.nonenumerable);
     return carry;
   }, {});
 }
@@ -4147,8 +3993,8 @@ var SuperJSON = class {
   constructor({ dedupe = false } = {}) {
     this.classRegistry = new ClassRegistry();
     this.symbolRegistry = new Registry((s) => {
-      var _a24;
-      return (_a24 = s.description) != null ? _a24 : "";
+      var _a23;
+      return (_a23 = s.description) != null ? _a23 : "";
     });
     this.customTransformerRegistry = new CustomTransformerRegistry();
     this.allowedErrorProps = [];
@@ -4247,24 +4093,24 @@ init_esm_shims2();
 init_esm_shims2();
 init_esm_shims2();
 init_esm_shims2();
+var _a17;
+var _b17;
+(_b17 = (_a17 = target).__VUE_DEVTOOLS_KIT_MESSAGE_CHANNELS__) != null ? _b17 : _a17.__VUE_DEVTOOLS_KIT_MESSAGE_CHANNELS__ = [];
 var _a18;
 var _b18;
-(_b18 = (_a18 = target).__VUE_DEVTOOLS_KIT_MESSAGE_CHANNELS__) != null ? _b18 : _a18.__VUE_DEVTOOLS_KIT_MESSAGE_CHANNELS__ = [];
+(_b18 = (_a18 = target).__VUE_DEVTOOLS_KIT_RPC_CLIENT__) != null ? _b18 : _a18.__VUE_DEVTOOLS_KIT_RPC_CLIENT__ = null;
 var _a19;
 var _b19;
-(_b19 = (_a19 = target).__VUE_DEVTOOLS_KIT_RPC_CLIENT__) != null ? _b19 : _a19.__VUE_DEVTOOLS_KIT_RPC_CLIENT__ = null;
+(_b19 = (_a19 = target).__VUE_DEVTOOLS_KIT_RPC_SERVER__) != null ? _b19 : _a19.__VUE_DEVTOOLS_KIT_RPC_SERVER__ = null;
 var _a20;
 var _b20;
-(_b20 = (_a20 = target).__VUE_DEVTOOLS_KIT_RPC_SERVER__) != null ? _b20 : _a20.__VUE_DEVTOOLS_KIT_RPC_SERVER__ = null;
+(_b20 = (_a20 = target).__VUE_DEVTOOLS_KIT_VITE_RPC_CLIENT__) != null ? _b20 : _a20.__VUE_DEVTOOLS_KIT_VITE_RPC_CLIENT__ = null;
 var _a21;
 var _b21;
-(_b21 = (_a21 = target).__VUE_DEVTOOLS_KIT_VITE_RPC_CLIENT__) != null ? _b21 : _a21.__VUE_DEVTOOLS_KIT_VITE_RPC_CLIENT__ = null;
+(_b21 = (_a21 = target).__VUE_DEVTOOLS_KIT_VITE_RPC_SERVER__) != null ? _b21 : _a21.__VUE_DEVTOOLS_KIT_VITE_RPC_SERVER__ = null;
 var _a22;
 var _b22;
-(_b22 = (_a22 = target).__VUE_DEVTOOLS_KIT_VITE_RPC_SERVER__) != null ? _b22 : _a22.__VUE_DEVTOOLS_KIT_VITE_RPC_SERVER__ = null;
-var _a23;
-var _b23;
-(_b23 = (_a23 = target).__VUE_DEVTOOLS_KIT_BROADCAST_RPC_SERVER__) != null ? _b23 : _a23.__VUE_DEVTOOLS_KIT_BROADCAST_RPC_SERVER__ = null;
+(_b22 = (_a22 = target).__VUE_DEVTOOLS_KIT_BROADCAST_RPC_SERVER__) != null ? _b22 : _a22.__VUE_DEVTOOLS_KIT_BROADCAST_RPC_SERVER__ = null;
 init_esm_shims2();
 init_esm_shims2();
 init_esm_shims2();
