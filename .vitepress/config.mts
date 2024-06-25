@@ -89,16 +89,14 @@ export default defineConfig({
           {
             text: '高级',
             items: [
-              { text: '自定义装饰器', link: '/zh/guide/introduction1' },
-              { text: '文档服务', link: '/zh/guide/introduction1' },
-              { text: '最佳实践', link: '/zh/guide/getting-started6' },
+              { text: '接口文档服务', link: '/zh/guide/doc' },
+              // { text: '最佳实践', link: '/zh/guide/getting-started6' },
             ]
           },
           {
             text: '部署',
             items: [
-              { text: '文档服务', link: '/zh/guide/introduction1' },
-              { text: '最佳实践', link: '/zh/guide/getting-started2' },
+              { text: '打包部署', link: '/zh/guide/build' },
             ]
           }
         ],
