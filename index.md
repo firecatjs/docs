@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: Installation
       link: /guide/getting-started
+    - theme: alt
+      text: 中文文档
+      link: /zh/
   image:
     src: /images/logo-new.png
     alt: FireCat
