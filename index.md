@@ -4,22 +4,31 @@ layout: home
 
 hero:
   name: "FireCat"
-  text: "Koajs-based Upper Framework"
-  tagline: My great project tagline
+  text: "An elegant Node.js framework based on Koajs"
+  tagline: Simple, elegant, and fast to build your next application
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get Started
+      link: /guide/introduction
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Installation
+      link: /guide/getting-started
+  image:
+    src: /images/logo-new.png
+    alt: FireCat
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Elegant and Simple
+    details: Use decorators to implement request interception, permission validation, field validation, and other functions.
+  - title: Based on Koajs
+    details: FireCat is not reinventing the wheel, but standing on the shoulders of giants, expanding various functions based on Koajs.
+  - title: High Performance
+    details: FireCat is as fast as Koajs.
+  - title: TypeScript
+    details: FireCat fully supports TypeScript.
+  - title: Webpack
+    details: FireCat uses Webpack for packaging and deployment.
+  - title: Free Expansion
+    details: You can freely expand your decorators to achieve various requirements.
+    
 ---
-

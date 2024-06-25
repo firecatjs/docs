@@ -9,15 +9,48 @@ export default defineConfig({
     logo: 'https://cdn.jsdelivr.net/npm/fire-cat/logo-new.png',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Guide', link: '/guide/introduction' },
+      { text: 'API', link: '/api/' },
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Introduction',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'What is FireCat', link: '/guide/introduction' },
+          { text: 'Getting Started', link: '/guide/getting-started' },
+        ]
+      },
+      {
+        text: 'Basics',
+        items: [
+          { text: 'Controller', link: '/guide/controller' },
+          { 
+            text: 'Decorators', 
+            items: [
+              { text: 'Introduction', link: '/guide/decorators/' },
+              { text: 'Router Decorators', link: '/guide/decorators/router' },
+              { text: 'Request Decorators', link: '/guide/decorators/request' },
+              { text: 'Custom Decorators', link: '/guide/decorators/customize' },
+            ]
+          },
+          { text: 'Interceptor', link: '/guide/interceptor' },
+          { text: 'Router', link: '/guide/router' },
+          { text: 'Configuration', link: '/guide/config' },
+          { text: 'Validation', link: '/guide/verify' },
+        ]
+      },
+      {
+        text: 'Advanced',
+        items: [
+          { text: 'API Documentation Service', link: '/guide/doc' },
+          // { text: 'Best Practices', link: '/zh/guide/getting-started6' },
+        ]
+      },
+      {
+        text: 'Deployment',
+        items: [
+          { text: 'Build and Deploy', link: '/guide/build' },
         ]
       }
     ],
