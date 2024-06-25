@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "FireCat",
   description: "Koajs-based Upper Framework",
+  head: [['link', { rel: 'icon', href: '/images/favicon.ico' }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: 'https://cdn.jsdelivr.net/npm/fire-cat/logo-new.png',

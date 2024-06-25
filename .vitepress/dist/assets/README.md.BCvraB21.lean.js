@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as t,a3 as s}from"./chunks/framework.CbUU_PFW.js";const m=JSON.parse('{"title":"FireCat Document","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),i={name:"README.md"},n=s("",3),o=[n];function r(c,d,l,h,p,_){return t(),e("div",null,o)}const b=a(i,[["render",r]]);export{m as __pageData,b as default};
