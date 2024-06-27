@@ -3,8 +3,28 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "FireCat",
-  description: "Koajs-based Upper Framework",
-  head: [['link', { rel: 'icon', href: '/images/favicon.ico' }]],
+  description: "An elegant Node.js framework based on Koajs",
+  head: [
+    ['link', { rel: 'icon', href: '/images/favicon.ico' }],
+    [
+      'script',
+      {
+        async: "true",
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-2RRDMHQHYT',
+      },
+    ],
+    [
+      'script',
+      {},
+      `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2RRDMHQHYT');
+      `
+    ],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: 'https://cdn.jsdelivr.net/npm/fire-cat/logo-new.png',
