@@ -46,3 +46,17 @@ fireRouter.group('/api/v1', (v1)=> {
 })
 
 ```
+
+## Global route interceptor
+
+You can pass in an interceptor when defining a route, and all requests under this route will first pass through this interceptor
+
+```ts
+const testGlobalMiddleware: KoaMiddleware = async (ctx, next)=> {
+  ctx.hello = "world"
+  await next();
+}
+
+
+fireCatRouter.controller('/test', new TestController(), [testGlobalMiddleware])
+```

@@ -34,48 +34,49 @@ export default defineConfig({
       { text: 'API', link: '/api/' },
     ],
 
-    sidebar: [
-      {
-        text: 'Introduction',
-        items: [
-          { text: 'What is FireCat', link: '/guide/introduction' },
-          { text: 'Getting Started', link: '/guide/getting-started' },
-        ]
-      },
-      {
-        text: 'Basics',
-        items: [
-          { text: 'Controller', link: '/guide/controller' },
-          { 
-            text: 'Decorators', 
-            items: [
-              { text: 'Introduction', link: '/guide/decorators/' },
-              { text: 'Router Decorators', link: '/guide/decorators/router' },
-              { text: 'Request Decorators', link: '/guide/decorators/request' },
-              { text: 'Custom Decorators', link: '/guide/decorators/customize' },
-            ]
-          },
-          { text: 'Interceptor', link: '/guide/interceptor' },
-          { text: 'Router', link: '/guide/router' },
-          { text: 'Configuration', link: '/guide/config' },
-          { text: 'Validation', link: '/guide/verify' },
-        ]
-      },
-      {
-        text: 'Advanced',
-        items: [
-          { text: 'API Documentation Service', link: '/guide/doc' },
-          // { text: 'Best Practices', link: '/zh/guide/getting-started6' },
-        ]
-      },
-      {
-        text: 'Deployment',
-        items: [
-          { text: 'Build and Deploy', link: '/guide/build' },
-        ]
-      }
-    ],
-
+    sidebar: {
+      '/guide/': [
+        {
+          text: 'Introduction',
+          items: [
+            { text: 'What is FireCat', link: '/guide/introduction' },
+            { text: 'Getting Started', link: '/guide/getting-started' },
+          ]
+        },
+        {
+          text: 'Basics',
+          items: [
+            { text: 'Controller', link: '/guide/controller' },
+            { 
+              text: 'Decorators', 
+              items: [
+                { text: 'Introduction', link: '/guide/decorators/' },
+                { text: 'Router Decorators', link: '/guide/decorators/router' },
+                { text: 'Request Decorators', link: '/guide/decorators/request' },
+                { text: 'Custom Decorators', link: '/guide/decorators/customize' },
+              ]
+            },
+            { text: 'Interceptor', link: '/guide/interceptor' },
+            { text: 'Router', link: '/guide/router' },
+            { text: 'Configuration', link: '/guide/config' },
+            { text: 'Validation', link: '/guide/verify' },
+          ]
+        },
+        {
+          text: 'Advanced',
+          items: [
+            { text: 'API Documentation Service', link: '/guide/doc' },
+            // { text: 'Best Practices', link: '/zh/guide/getting-started6' },
+          ]
+        },
+        {
+          text: 'Deployment',
+          items: [
+            { text: 'Build and Deploy', link: '/guide/build' },
+          ]
+        }
+      ]
+    },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/firecatjs/fire-cat' }
     ],
@@ -113,47 +114,49 @@ export default defineConfig({
           { text: 'API', link: '/zh/api/' },
         ],
 
-        sidebar: [
-          {
-            text: '介绍',
-            items: [
-              { text: 'FireCat是什么', link: '/zh/guide/introduction' },
-              { text: '开始', link: '/zh/guide/getting-started' },
-            ]
-          },
-          {
-            text: '基础',
-            items: [
-              { text: '控制器', link: '/zh/guide/controller' },
-              { 
-                text: '装饰器', 
-                items: [
-                  { text: '介绍', link: '/zh/guide/decorators/' },
-                  { text: '路由装饰器', link: '/zh/guide/decorators/router' },
-                  { text: '请求装饰器', link: '/zh/guide/decorators/request' },
-                  { text: '自定义装饰器', link: '/zh/guide/decorators/customize' },
-                ]
-              },
-              { text: '拦截器', link: '/zh/guide/interceptor' },
-              { text: '路由', link: '/zh/guide/router' },
-              { text: '配置', link: '/zh/guide/config' },
-              { text: '验证', link: '/zh/guide/verify' },
-            ]
-          },
-          {
-            text: '高级',
-            items: [
-              { text: '接口文档服务', link: '/zh/guide/doc' },
-              // { text: '最佳实践', link: '/zh/guide/getting-started6' },
-            ]
-          },
-          {
-            text: '部署',
-            items: [
-              { text: '打包部署', link: '/zh/guide/build' },
-            ]
-          }
-        ],
+        sidebar: {
+          '/zh/guide': [
+            {
+              text: '介绍',
+              items: [
+                { text: 'FireCat是什么', link: '/zh/guide/introduction' },
+                { text: '开始', link: '/zh/guide/getting-started' },
+              ]
+            },
+            {
+              text: '基础',
+              items: [
+                { text: '控制器', link: '/zh/guide/controller' },
+                { 
+                  text: '装饰器', 
+                  items: [
+                    { text: '介绍', link: '/zh/guide/decorators/' },
+                    { text: '路由装饰器', link: '/zh/guide/decorators/router' },
+                    { text: '请求装饰器', link: '/zh/guide/decorators/request' },
+                    { text: '自定义装饰器', link: '/zh/guide/decorators/customize' },
+                  ]
+                },
+                { text: '拦截器', link: '/zh/guide/interceptor' },
+                { text: '路由', link: '/zh/guide/router' },
+                { text: '配置', link: '/zh/guide/config' },
+                { text: '验证', link: '/zh/guide/verify' },
+              ]
+            },
+            {
+              text: '高级',
+              items: [
+                { text: '接口文档服务', link: '/zh/guide/doc' },
+                // { text: '最佳实践', link: '/zh/guide/getting-started6' },
+              ]
+            },
+            {
+              text: '部署',
+              items: [
+                { text: '打包部署', link: '/zh/guide/build' },
+              ]
+            }
+          ]
+        },
 
         search: {
           provider: 'algolia',

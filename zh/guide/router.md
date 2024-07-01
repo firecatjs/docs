@@ -46,3 +46,17 @@ fireRouter.group('/api/v1', (v1)=> {
 })
 
 ```
+
+## 全局路由拦截器
+
+你可以在定义路由的时候，传入拦截器，这个路由下的所有请求都会首先经过这个拦截器
+
+```ts
+const testGlobalMiddleware: KoaMiddleware = async (ctx, next)=> {
+  ctx.hello = "world"
+  await next();
+}
+
+
+fireCatRouter.controller('/test', new TestController(), [testGlobalMiddleware])
+```
