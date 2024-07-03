@@ -26,8 +26,8 @@ features:
     details: Koajs有多快FireCat 就有多快。
   - title: TypeScript
     details: FireCat 全面支持TypeScript。
-  - title:  Webpack
-    details: FireCat 使用Webpack打包部署。
+  - title:  TSC
+    details: FireCat 使用TSC打包部署。
   - title: 自由拓展
     details: 你可以自由拓展你的装饰器，实现各种各样的需求。
     

@@ -14,6 +14,10 @@
 ## Default configuration file
 The project has two default configuration files, namely `config.dev.ts` and `config.prod.ts`, which correspond to the development environment and the online environment. You can customize your configuration in them, and then export it in the `index.ts` file for use in other places where it is needed.
 
+## About env file
+
+The content of the `xx.env` file is to specify the entry of a configuration file, so that the application knows which configuration file we should use. The content of the env file is `APP_ENV=xxx` to specify which environment is currently.
+
 ## Customize your configuration file
 
 #### 1. Create a new file
@@ -29,13 +33,18 @@ export default {
 ```
 
 #### 2. Configure the startup entry
+First, create your configuration file in the root directory, such as `test.env`
+
+```env
+APP_ENV=test
+```
 
 Configure the startup entry in `package.json`, for example:
 ```json
 {
   ...
   "scripts": {
-    "dev": "cross-env APP_ENV=test nodemon",
+    "dev": "dotenv -e .test.env nodemon",
   }
   ...
 }

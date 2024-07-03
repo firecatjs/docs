@@ -72,7 +72,8 @@ export default defineConfig({
         {
           text: 'Deployment',
           items: [
-            { text: 'Build and Deploy', link: '/guide/build' },
+            { text: 'Pm2 Deploy', link: '/guide/build-pm2' },
+            { text: 'Docker Deploy', link: '/guide/build-docker' },
           ]
         }
       ]
@@ -152,7 +153,8 @@ export default defineConfig({
             {
               text: '部署',
               items: [
-                { text: '打包部署', link: '/zh/guide/build' },
+                { text: 'Pm2 部署', link: '/zh/guide/build-pm2' },
+                { text: 'Docker 部署', link: '/zh/guide/build-docker' },
               ]
             }
           ]

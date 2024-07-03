@@ -29,8 +29,8 @@ features:
     details: FireCat is as fast as Koajs.
   - title: TypeScript
     details: FireCat fully supports TypeScript.
-  - title: Webpack
-    details: FireCat uses Webpack for packaging and deployment.
+  - title: TSC
+    details: FireCat uses TSC for packaging and deployment.
   - title: Free Expansion
     details: You can freely expand your decorators to achieve various requirements.
     
