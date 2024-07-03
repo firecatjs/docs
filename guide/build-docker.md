@@ -3,6 +3,10 @@
 ## Package project
 
 ```bash
+npm run build
+```
+
+```bash
 docker build -t your-app-name .
 ```
 

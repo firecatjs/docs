@@ -3,6 +3,10 @@
 ## 打包项目
 
 ```bash
+npm run build
+```
+
+```bash
 docker build -t your-app-name .
 ```
 
